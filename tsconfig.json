@@ -1,0 +1,10 @@
+{
+  "forceConsistentCasingInFileNames": true,
+  "resolveJsonModule": true,
+  "isolatedModules": true,
+  "types": ["node"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true
+  }
+}
