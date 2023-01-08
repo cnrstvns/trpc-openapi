@@ -1,8 +1,8 @@
 import t from '../../trpc';
-import userRouter from './car';
+import carRouter from './car';
 
 const appRouter = t.router({
-  user: userRouter,
+  car: carRouter,
 });
 
 export default appRouter;
