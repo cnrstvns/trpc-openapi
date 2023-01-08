@@ -3,7 +3,13 @@
 import React from 'react';
 import trpc from '../../../helpers/trpc';
 
-export default function Car({ params }: { params: { car: string } }) {
+type Props = {
+  params: {
+    car: string;
+  };
+};
+
+export default function Car({ params }: Props) {
   const { data: car, isLoading } = trpc.car.retrieve.useQuery({
     id: parseInt(params.car, 10),
   });
