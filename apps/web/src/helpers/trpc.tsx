@@ -7,6 +7,9 @@ import { useState } from 'react';
 import type { AppRouter } from '../../../api/src/routers/trpc/_app';
 
 function getBaseUrl() {
+  if (process.env.NEXT_PUBLIC_TRPC_BASE_URL)
+    return process.env.NEXT_PUBLIC_TRPC_BASE_URL;
+
   return 'http://localhost:4000';
 }
 
@@ -30,7 +33,7 @@ export function ClientProvider(props: { children: React.ReactNode }) {
     trpc.createClient({
       links: [
         loggerLink({
-          enabled: () => true,
+          enabled: () => process.env.NODE_ENV === 'development',
         }),
         httpBatchLink({
           url: `${getBaseUrl()}/trpc`,
