@@ -8,9 +8,10 @@ import { usePathname } from 'next/navigation';
 type Props = {
   href: string;
   children: ReactNode;
+  external?: boolean;
 };
 
-export default function Link({ href, children }: Props) {
+export default function Link({ href, children, external }: Props) {
   const pathname = usePathname();
 
   const active = useMemo(() => pathname === href, [href, pathname]);
@@ -24,6 +25,7 @@ export default function Link({ href, children }: Props) {
           'text-blue-500 hover:text-blue-600 active:text-blue-700': active,
         },
       )}
+      target={external ? '_blank' : '_self'}
     >
       {children}
     </NextLink>
