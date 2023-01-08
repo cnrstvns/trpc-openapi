@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "start": "node -r esbuild-register src/server.ts",
-    "db:migrate": "npx prisma migrate dev --schema ./src/prisma/schema.prisma",
+    "db:migrate-dev": "npx prisma migrate dev --schema ./src/prisma/schema.prisma",
+    "db:migrate-deploy": "npx prisma migrate deploy --schema ./src/prisma/schema.prisma",
     "db:push": "npx prisma db push --schema ./src/prisma/schema.prisma",
     "db:generate": "npx prisma generate --schema=src/prisma/schema.prisma",
     "spec:generate": "ts-node src/scripts/generate-spec.ts"
