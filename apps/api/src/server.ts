@@ -56,6 +56,7 @@ function start() {
   // Serve Swagger UI with our OpenAPI schema
   app.use('/', swaggerUi.serve);
   app.get('/', swaggerUi.setup(openApiSpec));
+  app.get('/openapi', (_, res) => res.json(openApiSpec));
 
   app.listen(PORT, () => logger.info('Listening at http://localhost:4000'));
 }
