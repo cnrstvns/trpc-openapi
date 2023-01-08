@@ -9,6 +9,7 @@
     "start": "node -r esbuild-register src/server.ts",
     "db:migrate": "npx prisma migrate dev --schema ./src/prisma/schema.prisma",
     "db:push": "npx prisma db push --schema ./src/prisma/schema.prisma",
+    "db:generate": "npx prisma generate --schema=src/prisma/schema.prisma",
     "spec:generate": "ts-node src/scripts/generate-spec.ts"
   },
   "dependencies": {
