@@ -10,9 +10,12 @@ import restRouter from './routers/rest/_app';
 import { createContext } from './trpc';
 import openApiSpec from './openapi';
 import logger from './helpers/logger';
+import dotenv from 'dotenv';
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 const PORT = parseInt(process.env.PORT!, 10) || 4000;
+
+dotenv.config();
 
 function start() {
   // Initialize express app
