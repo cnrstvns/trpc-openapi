@@ -24,7 +24,11 @@ export default t.router({
     }),
 
   retrieve: t.procedure
-    .input(z.object({ id: z.number() }))
+    .input(
+      z.object({
+        id: z.number().describe('The ID of the car you want to retrieve.'),
+      }),
+    )
     .output(retrieveResponse)
     .meta({
       openapi: {
