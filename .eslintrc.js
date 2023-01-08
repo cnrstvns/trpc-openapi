@@ -1,16 +1,10 @@
-/**
- * @type {import('eslint').Linter.Config}
- */
 module.exports = {
-  extends: ['airbnb-base', 'airbnb-typescript/base'],
-  parser: '@typescript-eslint/parser',
-
-  /**
-   * @type {import('@typescript-eslint/parser').ParserOptions}
-   */
-  parserOptions: {
-    project: './tsconfig.json',
+  root: true,
+  // This tells ESLint to load the config from the package `eslint-config-custom`
+  extends: ['custom'],
+  settings: {
+    next: {
+      rootDir: ['apps/*/'],
+    },
   },
-
-  rules: {},
 };
