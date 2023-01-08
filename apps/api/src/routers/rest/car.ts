@@ -8,6 +8,7 @@ import {
   listOptions,
   paginateResponse,
 } from '../../schemas/car';
+import { createCar } from '../../services/car';
 
 export default t.router({
   create: t.procedure
@@ -17,9 +18,7 @@ export default t.router({
       openapi: { method: 'POST', path: '/cars', summary: 'Create a car' },
     })
     .mutation(async (req) => {
-      const car = await prisma.car.create({
-        data: req.input,
-      });
+      const car = await createCar(req.input);
 
       return car;
     }),

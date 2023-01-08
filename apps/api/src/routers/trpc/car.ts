@@ -2,6 +2,7 @@ import t from '../../trpc';
 import prisma from '../../prisma';
 import { z } from 'zod';
 import { createBody } from '../../schemas/car';
+import { createCar } from '../../services/car';
 
 export default t.router({
   getCount: t.procedure.query(async () => {
@@ -11,9 +12,7 @@ export default t.router({
   }),
 
   create: t.procedure.input(createBody).mutation(async ({ input }) => {
-    const car = await prisma.car.create({
-      data: input,
-    });
+    const car = await createCar(input);
 
     return car.id;
   }),
