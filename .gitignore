@@ -36,3 +36,4 @@ yarn-error.log*
 
 packages/openapi-client/openapi-spec.json
 packages/openapi-client/openapitools.json
+packages/*/dist

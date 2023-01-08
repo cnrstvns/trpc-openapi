@@ -17,8 +17,8 @@ export const createBody = z.object({
 export const listOptions = z.object({
   starting_after: z
     .number()
-    .optional()
-    .describe('List records only after this ID'),
+    .describe('List records only after this ID')
+    .optional(),
 
   limit: z
     .number()
@@ -29,8 +29,8 @@ export const listOptions = z.object({
 
   year: z
     .number()
-    .optional()
-    .describe('List cars that were manufactured in this year.'),
+    .describe('List cars that were manufactured in this year.')
+    .optional(),
 });
 
 export const paginateResponse = z.object({
