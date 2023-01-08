@@ -4,5 +4,5 @@ import restRouter from './routers/rest/_app';
 export default generateOpenApiDocument(restRouter, {
   title: 'Testing OpenAPI with TRPC',
   version: '1.0.0',
-  baseUrl: 'http://localhost:4000',
+  baseUrl: process.env.REST_API_BASE_URL || 'http://localhost:4000',
 });
