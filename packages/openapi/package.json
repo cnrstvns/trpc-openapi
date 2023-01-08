@@ -1,0 +1,12 @@
+{
+  "name": "openapi",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "gen:spec": "ts-node generate-spec.ts",
+    "gen:node": "rm -f openapi-spec.json && rm -rf dist/typescript && yarn gen:spec && openapi-generator-cli generate -c openapi-config.json -i openapi-spec.json -g typescript -o ./dist/typescript"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.2"
+  }
+}
