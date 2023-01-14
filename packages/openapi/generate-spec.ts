@@ -14,6 +14,8 @@ const errorSpec = {
     },
     issues: {
       type: 'array',
+      description:
+        'An array of objects representing each issue that occurred when processing this request.',
       items: {
         type: 'object',
         properties: {
